@@ -1,4 +1,4 @@
-export default class CreateImageInstance{
+export default class LoadElement{
     constructor(img){
         this.el = img;
         this.createImage();
