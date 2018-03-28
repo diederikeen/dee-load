@@ -1,4 +1,4 @@
-import DeeDeeLoad from './DeeDeeLoad/
+import DeeDeeLoad from './DeeDeeLoad/;
 
 const options = {
     className: 'lazy-load'
