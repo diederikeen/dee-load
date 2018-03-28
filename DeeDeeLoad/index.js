@@ -1,3 +1,6 @@
+const throttle = require('throttle-debounce/throttle');
+import LoadElement from './loadElement';
+
 export default class DeeDeeLoad{
     constructor(customOptions){
         this._customOptions = customOptions;
@@ -50,15 +53,15 @@ export default class DeeDeeLoad{
         for (let i = this._elements.length - 1; i >= 0; i--) {
             const el = this._elements[i];
 
-            // if (this._options.addRandomDelay) {
-            //     if (el.dataset.src === undefined && el.dataset.delay === undefined) {
-            //         this._addRandomDelay(el);
-            //     }    
-            // }
+            if (this._options.addRandomDelay) {
+                if (el.dataset.src === undefined && el.dataset.delay === undefined) {
+                     this._addRandomDelay(el);
+                }    
+            }
             
 
             if (this._isElInView(el)) {
-                new CreateImageInstance(el);
+                new LoadElement(el);
 
                 if (this._options.removeFromArray) {
                     this._removeItemFromArray(el)
